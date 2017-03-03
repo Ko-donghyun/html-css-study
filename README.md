@@ -35,6 +35,7 @@
       - 태그만 보고도 어느 부분이 제목이고 메뉴인지 내용인지 쉽게 알 수 있음.
       - 웹 접근성을 높일 수 있음.
       - `<div></div>`태그랑 다를바 없음. 단순 의미 부여를 위해서 사용
+      - `<a></a>`태그와 `<button></button>`태그의 차이!
       - 종류
         - 헤더(header) : 사이트의 제목과 로고, 검색 창
         - 네비(nav) : 메뉴를 나타내는 태그, 같은 사이트 안의 문서나 다른 사이트의 문서로 연결하는 링크들
@@ -70,6 +71,7 @@
 - CSS
   - 문서 꾸미기
   - 웹 문서의 디자인을 구성
+  - [브라우저별 버전별 적용이 가능한 스타일이 다름](http://caniuse.com/#search=canvas)
   - 반응형 작업시 %로 하고, 모바일 뷰에서 먼저 시작
   - 중요 키워드
     - CSS reset : 기본적인 CSS리셋
@@ -81,11 +83,13 @@
         - padding : 내용과 경계 안쪽 공간
         - border : 경계
         - margin : 경계 외부 바깥쪽 공간
-      - inline: float을 알고 있음, 글자가 이미지를 겹치고 싶지 않다
-      - block
-        - default height: 자식의 height 
-        - default width: 부모의 width
-        - default margin: 부모의 width와 연관
+      - display
+        - inline : 선
+          - float을 알고 있음 > 글자가 이미지를 겹치고 싶지 않다는 생각에서 출발
+        - block : 면
+          - default height : 자식의 height 
+          - default width : 부모의 width
+          - default margin : 부모의 width와 연관
     - float : 집 나간 자식
       - clear: both - float 없애기
       - ::after, ::before
@@ -105,6 +109,40 @@
       - offset
         - top, left (좌상)
         - bottom, right(우하)
+    - 플렉스박스(FlexBox) : IE 9 이하는 지원 안된대~
+      - [N 스크린](https://material.io/devices/) 대응
+      - 가로 정렬, 세로 정렬
+      - 실습
+        - 1) 부모에게 display: flex로 준다
+        - 2) 정렬할 방향 설정
+          - 가로 : `flex-direction: row;` (가로 main axis 생성, 세로 cross axis 생성)
+          - 세로 : `flex-direction: column;` (세로 main axis 생성, 가로 cross axis 생성)
+        - 3) 넘치게 할 것이냐 아니냐
+          - `flex-wrap: wrap`
+          - `flex-wrap: no-wrap`
+        - 추가
+          - 위치시키고 싶은 아이템의 속성
+            - justify-content : 정방향 정렬
+            - align-items : 역방향 정렬
+            - align-content
+            - align-self
+            - order : `flex-child:nth-child(1) { order: 2 }`
+          - 위치시키고 싶은 값
+            - flex-start
+            - flex-end
+            - space-between
+            - space-around
+            - center
   - !!주의!!
     - 직접 스타일을 주지 말 것!
     - 태그 < 클래스 < ID - 주로 클래스로 처리.
+
+- 반응형
+
+  - 미디어 쿼리
+  - 
+  
+- 참고
+  - 멋쟁이 사자처럼 5기 겨울 방학 스터디(서강대 멋사 운영진 노지승님)
+  - 모던 웹 디자인을 위한 HTML5+CSS3 입문 책
+  - 
