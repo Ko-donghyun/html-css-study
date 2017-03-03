@@ -59,14 +59,11 @@
         - clear: both - float 없애기
         - ::after, ::before
         - 가상 엘리먼트
-        - >
-```
-.float-contained-div::after {
-  content: ''; // 컨텐트가 없으면 적용되지 않음
-  display: block;
-  clear: both;
-}
-```
+          - ```.float-contained-div::after {
+          -   content: ''; // 컨텐트가 없으면 적용되지 않음
+          -   display: block;
+          -   clear: both;
+          - }```
       - position
         - float와 비슷하나 성능상 좋지 않음
         - 종류
