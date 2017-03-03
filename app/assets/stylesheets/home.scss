@@ -101,6 +101,53 @@
   width: 200px;
 }
 
+
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.flex-parent .flex-child {
+  display: flex;
+  align-items: center;
+}
+.flex-parent .flex-child:nth-child(1) {
+  order: 2;
+}
+.flex-parent .flex-child:nth-child(2) {
+  order: 1;
+}
+.flex-parent .flex-child:nth-child(3) {
+  // order: 2;
+}
+
+.flex-parent .blue {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-child {
+  color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.red {
+  background: #ff4a4a;
+}
+.yellow {
+  background-color: #ffdb2c;
+}
+.blue {
+  background: #0066ff;
+}
+
 .footer {
   text-align: center;
   padding: 20px 0;
