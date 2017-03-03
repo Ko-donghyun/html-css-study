@@ -11,14 +11,27 @@
 
 # HTML CSS 스터디
 
-  - 기본 환경
-    - HMTL5, CSS3
+- 기본 환경
+  - HMTL5, CSS3
 
-  - HTML
-    - 문서 기본 틀 잡기
-    - 웹 사이트의 내용을 나열
-    - 기본 구조
-```
+- HTML
+  - 문서 기본 틀 잡기
+  - 웹 사이트의 내용을 나열
+  - 중요 키워드
+    - 웹 접근성
+      - 어느 부분이 제목인지, 본문인지 정확하게 알 수 있도록 작성되어야 제대로 보인다.
+      - 웹 표준에 맞게 작성된 웹 문서라면 키보드만으로 완벽하게 문서 안의 내용 사이를 이동할 수 있다.
+      - 검색엔진에서 잘 검색되고, 개발 시간이 단축된다.
+      - 내용을 눈으로 확인할 수 없는 시각장애인이든, 마우스를 자유롭게 사용할 수 없는 지체장애인이든 누구나 웹에 있는 콘텐츠를 구애받지 않고 사용할 수 있도록 제작해야 한다는 것
+    - 시멘틱(sementic) : 의미있는 태그 사용
+      - 인터넷상의 문서들을 보면 큰 구조는 어느정도 비슷하다.
+      - 태그만 보고도 어느 부분이 제목이고 메뉴인지 내용인지 쉽게 알 수 있음.
+      - 웹 접근성을 높일 수 있음.
+  - !!주의!!
+    - `<center>, <b>, <i>, <big>, <frame>`등의 스타일을 나타내는 태그 쓰지 말 것!
+    - 인라인 태그(선, 흐름) 안에 블록 태그(면, 영역) 넣지 말 것!  
+  - 기본 구조
+```    
 <!doctype html> <!-- HTML5로 작성하는 문서 -->
 <html>
   <head>
@@ -29,51 +42,39 @@
   </body>
 </html>
 ```
-    - 중요 키워드
-      - 웹 접근성
-        - 어느 부분이 제목인지, 본문인지 정확하게 알 수 있도록 작성되어야 제대로 보인다.
-        - 웹 표준에 맞게 작성된 웹 문서라면 키보드만으로 완벽하게 문서 안의 내용 사이를 이동할 수 있다.
-        - 검색엔진에서 잘 검색되고, 개발 시간이 단축된다.
-        - 내용을 눈으로 확인할 수 없는 시각장애인이든, 마우스를 자유롭게 사용할 수 없는 지체장애인이든 누구나 웹에 있는 콘텐츠를 구애받지 않고 사용할 수 있도록 제작해야 한다는 것
-      - 시멘틱(sementic) : 의미있는 태그 사용
-        - 인터넷상의 문서들을 보면 큰 구조는 어느정도 비슷하다.
-        - 태그만 보고도 어느 부분이 제목이고 메뉴인지 내용인지 쉽게 알 수 있음.
-        - 웹 접근성을 높일 수 있음.
-    - !!주의!!
-      - `<center>, <b>, <i>, <big>, <frame>`등의 스타일을 나타내는 태그 쓰지 말 것!
-      - 인라인 태그(선, 흐름) 안에 블록 태그(면, 영역) 넣지 말 것!  
-  
-  - CSS
-    - 문서 꾸미기
-    - 웹 문서의 디자인을 구성
-    - 중요 키워드
-      - CSS reset : 기본적인 CSS리셋
-        - ress.css
-      - 박스모델 : inline vs block
-        - inline: float을 알고 있음, 글자가 이미지를 겹치고 싶지 않다
-        - block
-          - default height: 자식의 height 
-          - default width: 부모의 width
-          - default margin: 부모의 width와 연관
-      - float : 집 나간 자식
-        - clear: both - float 없애기
-        - ::after, ::before
-        - 가상 엘리먼트
-          - ```.float-contained-div::after {
-          -   content: ''; // 컨텐트가 없으면 적용되지 않음
-          -   display: block;
-          -   clear: both;
-          - }```
-      - position
-        - float와 비슷하나 성능상 좋지 않음
-        - 종류
-          - static : default 설정
-          - relative : 본인의 위치는 알고 있음
-          - absolute : 본인의 위치를 모름, 기준점(static이 아닌 부모)이 있어야 한다.
-          - fixed : 기준이 viewport(브라우저 창 크기)
-        - offset
-          - top, left (좌상)
-          - bottom, right(우하)
-    - !!주의!!
-      - 직접 스타일을 주지 말 것!
-      - 태그 < 클래스 < ID - 주로 클래스로 처리.
+
+- CSS
+  - 문서 꾸미기
+  - 웹 문서의 디자인을 구성
+  - 반응형 작업시 %로 하고, 모바일 뷰에서 먼저 시작
+  - 중요 키워드
+    - CSS reset : 기본적인 CSS리셋
+      - ress.css
+    - 박스모델 : inline vs block
+      - inline: float을 알고 있음, 글자가 이미지를 겹치고 싶지 않다
+      - block
+        - default height: 자식의 height 
+        - default width: 부모의 width
+        - default margin: 부모의 width와 연관
+    - float : 집 나간 자식
+      - clear: both - float 없애기
+      - ::after, ::before
+      - 가상 엘리먼트
+        - `.float-contained-div::after {`
+        - `  content: ''; // 컨텐트가 없으면 적용되지 않음`
+        - `  display: block;`
+        - `  clear: both;`
+        - `}`
+    - position
+      - float와 비슷하나 성능상 좋지 않음
+      - 종류
+        - static : default 설정
+        - relative : 본인의 위치는 알고 있음
+        - absolute : 본인의 위치를 모름, 기준점(static이 아닌 부모)이 있어야 한다.
+        - fixed : 기준이 viewport(브라우저 창 크기)
+      - offset
+        - top, left (좌상)
+        - bottom, right(우하)
+  - !!주의!!
+    - 직접 스타일을 주지 말 것!
+    - 태그 < 클래스 < ID - 주로 클래스로 처리.
