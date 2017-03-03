@@ -18,7 +18,7 @@
     - 문서 기본 틀 잡기
     - 웹 사이트의 내용을 나열
     - 기본 구조
-      ```
+      ```html
       <!doctype html> <!-- HTML5로 작성하는 문서 -->
       <html>
         <head>
@@ -60,7 +60,7 @@
       - float : 집 나간 자식
         - clear: both - float 없애기
         - ::after, ::before
-          ```
+          ```css
           가상 엘리먼트
           .float-contained-div::after {
             content: '';
