@@ -71,7 +71,7 @@
 - CSS
   - 문서 꾸미기
   - 웹 문서의 디자인을 구성
-  - [브라우저별 버전별 적용이 가능한 스타일이 다름](http://caniuse.com/#search=canvas)
+  - [브라우저별 버전별 적용이 가능한 스타일이 다름](http://caniuse.com/#search=flexbox)
   - 반응형 작업시 %로 하고, 모바일 뷰에서 먼저 시작
   - 중요 키워드
     - CSS reset : 기본적인 CSS리셋
@@ -92,8 +92,7 @@
           - default margin : 부모의 width와 연관
     - float : 집 나간 자식
       - clear: both - float 없애기
-      - ::after, ::before
-      - 가상 엘리먼트
+      - 가상 엘리먼트 - ::after, ::before
         - `.float-contained-div::after {`
         - `  content: ''; // 컨텐트가 없으면 적용되지 않음`
         - `  display: block;`
@@ -138,9 +137,28 @@
     - 태그 < 클래스 < ID - 주로 클래스로 처리.
 
 - 반응형
-
+  - 주로 글자 크기, 이미지 크기, 위치 정도의 수정
+  - meta 태그를 사용하여 화면 너비에 대한 정보를 제공해야 함
+    - `<meta name='viewport' content='width=device-width'>`
   - 미디어 쿼리
-  - 
+    - 화면 너비 관련
+      - 화면 너비 0픽셀 ~ 767픽셀
+        - `@media screen and (max-width: 767px) {}`
+      - 화면 너비 768픽셀(아이패드) ~ 959픽셀
+        - `@media screen and (min-width: 768px) and (max-width: 959px) {}`
+      - 화면 너비 960픽셀(일반 웹) ~
+        - `@media screen and (min-width: 960px) {}`
+    - 화면 방향 관련
+      - 수직
+        - `@media screen and (orientation: portrait) {}`
+      - 수평
+        - `@media screen and (orientation: landscape) {}`
+    - 레티나(고해상도)
+      - `@media screen and (-webkit-min-device-pixel-ratio: 2) {}`
+  - 그리드 시스템
+    - 반응형 웹은 대부분 그리드 시스템을 사용
+    - [부트스트랩](http://getbootstrap.com/css/#grid)에도 존재
+    - 
   
 - 참고
   - 멋쟁이 사자처럼 5기 겨울 방학 스터디(서강대 멋사 운영진 노지승님)
